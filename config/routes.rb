@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  # STEP 1: A ROUTE triggers a controller action
-  # verb "/urls" => "namespace/controllers#action"
-
   namespace :api do
-  	get "/single_contact_url" => "contacts#single_contact_method"
-  	get "/all_contacts_url" => "contacts#all_contacts_method"
+    get '/contacts' => 'contacts#index'  
+    post '/contacts' => 'contacts#create'
+    get '/contacts/:id' => 'contacts#show'
+    patch '/contacts/:id' => 'contacts#update'
+    delete '/contacts/:id' => 'contacts#destroy'
   end
 end
